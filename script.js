@@ -25,8 +25,10 @@ form.addEventListener("submit", function (e) {
   if (isFormValid) {
     alert("Registration successful!");
     form.reset();
-    document.querySelectorAll(".form-group").forEach((group) => {
-      group.className = "form-group";
+    document.querySelectorAll(".form-item").forEach((item) => {
+    item.className = "form-item"; // 重置为初始状态
+    const small = item.querySelector("small");
+    small.innerText = ""; 
     }); 
   }
 });
@@ -98,5 +100,5 @@ function showError(input, message) {
 function showSuccess(input) {
   const formGroup = input.parentElement;
   formGroup.className = "form-item success";
-  input.style.borderColor = "#f0f0f0";
+  //input.style.borderColor = "#f0f0f0";
 }
